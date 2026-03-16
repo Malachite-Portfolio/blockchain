@@ -1,6 +1,6 @@
 /* ============================================================
    MALACHITE — Premium Crypto Trading Design System
-   Pure Black Theme + Neon Malachite Green
+   Pure Black Theme + Electric Cyan
    ============================================================ */
 
 /* -------------------- CSS Custom Properties -------------------- */
@@ -8,23 +8,23 @@
   --bg: #000000;
   --bg-card: #0a0a0a;
   --bg-card-hover: #111111;
-  --emerald: #00c800;
-  --neon: #22e622;
-  --mint: #66ff66;
-  --neon-dim: #1aaf1a;
-  --white: #f0fff0;
-  --text-primary: #e8ffe8;
-  --text-secondary: #7aaa7a;
-  --text-muted: #4a6a4a;
+  --emerald: #0078ff;
+  --neon: #00d1ff;
+  --mint: #7de3ff;
+  --neon-dim: #006da8;
+  --white: #f3fbff;
+  --text-primary: #e6f6ff;
+  --text-secondary: #7ea1b7;
+  --text-muted: #4d6878;
   --glass-bg: rgba(10, 10, 10, 0.75);
-  --glass-border: rgba(34, 230, 34, 0.1);
+  --glass-border: rgba(0, 209, 255, 0.1);
   --glass-blur: blur(24px);
   --radius: 18px;
   --radius-sm: 12px;
   --radius-xs: 8px;
-  --glow: 0 0 30px rgba(34, 230, 34, 0.15);
-  --glow-strong: 0 0 60px rgba(34, 230, 34, 0.3);
-  --glow-intense: 0 0 80px rgba(34, 230, 34, 0.5);
+  --glow: 0 0 30px rgba(0, 209, 255, 0.15);
+  --glow-strong: 0 0 60px rgba(0, 209, 255, 0.3);
+  --glow-intense: 0 0 80px rgba(0, 209, 255, 0.5);
   --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.6);
   --font-display: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -129,11 +129,11 @@ input {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(34, 230, 34, 0.3);
+    box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
   }
 
   50% {
-    box-shadow: 0 0 50px rgba(34, 230, 34, 0.7);
+    box-shadow: 0 0 50px rgba(0, 209, 255, 0.7);
   }
 }
 
@@ -217,12 +217,12 @@ input {
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(34, 230, 34, 0.4);
+    box-shadow: 0 0 0 0 rgba(0, 209, 255, 0.4);
   }
 
   50% {
     transform: scale(1.5);
-    box-shadow: 0 0 0 10px rgba(34, 230, 34, 0);
+    box-shadow: 0 0 0 10px rgba(0, 209, 255, 0);
   }
 }
 
@@ -329,8 +329,8 @@ input {
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(34, 230, 34, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 230, 34, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 209, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 209, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
@@ -372,18 +372,11 @@ input {
 .loader-ring {
   width: 60px;
   height: 60px;
-  border: 3px solid rgba(34, 230, 34, 0.15);
+  border: 3px solid rgba(0, 209, 255, 0.15);
   border-top-color: var(--neon);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 20px;
-}
-
-.loader-logo {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(34, 230, 34, 0.6));
 }
 
 .loader-text {
@@ -392,7 +385,7 @@ input {
   font-weight: 800;
   color: var(--neon);
   letter-spacing: 0.8px;
-  text-shadow: 0 0 20px rgba(34, 230, 34, 0.35);
+  text-shadow: 0 0 20px rgba(0, 209, 255, 0.35);
 }
 
 /* -------------------- Cursor Glow -------------------- */
@@ -401,7 +394,7 @@ input {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 230, 34, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 209, 255, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
@@ -433,7 +426,7 @@ input {
   position: absolute;
   inset: -2px;
   border-radius: calc(var(--radius) + 2px);
-  background: conic-gradient(from 0deg, transparent, rgba(34, 230, 34, 0.15), transparent, rgba(34, 230, 34, 0.1), transparent);
+  background: conic-gradient(from 0deg, transparent, rgba(0, 209, 255, 0.15), transparent, rgba(0, 209, 255, 0.1), transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity var(--transition);
@@ -442,7 +435,7 @@ input {
 .glass-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--glow-strong);
-  border-color: rgba(34, 230, 34, 0.3);
+  border-color: rgba(0, 209, 255, 0.3);
 }
 
 .glass-card:hover::before {
@@ -492,7 +485,7 @@ input {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 40px rgba(34, 230, 34, 0.5);
+  box-shadow: 0 0 40px rgba(0, 209, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -505,8 +498,8 @@ input {
 }
 
 .btn-outline:hover {
-  background: rgba(34, 230, 34, 0.1);
-  box-shadow: 0 0 25px rgba(34, 230, 34, 0.3);
+  background: rgba(0, 209, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 209, 255, 0.3);
   transform: translateY(-2px);
 }
 
@@ -523,7 +516,7 @@ input {
 .btn-buy {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #00c800, #22e622);
+  background: linear-gradient(135deg, #0078ff, #00d1ff);
   color: #000;
   font-size: 1rem;
   font-weight: 700;
@@ -531,7 +524,7 @@ input {
 }
 
 .btn-buy:hover {
-  box-shadow: 0 0 30px rgba(34, 230, 34, 0.5);
+  box-shadow: 0 0 30px rgba(0, 209, 255, 0.5);
 }
 
 .btn-sell {
@@ -556,8 +549,8 @@ input {
 
 .section-badge {
   display: inline-block;
-  background: rgba(34, 230, 34, 0.08);
-  border: 1px solid rgba(34, 230, 34, 0.15);
+  background: rgba(0, 209, 255, 0.08);
+  border: 1px solid rgba(0, 209, 255, 0.15);
   border-radius: 50px;
   padding: 8px 20px;
   font-size: 0.85rem;
@@ -615,7 +608,7 @@ input {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 10px 0;
-  border-bottom: 1px solid rgba(34, 230, 34, 0.06);
+  border-bottom: 1px solid rgba(0, 209, 255, 0.06);
 }
 
 .nav-container {
@@ -635,13 +628,6 @@ input {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.logo-img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(34, 230, 34, 0.5));
 }
 
 .nav-links {
@@ -746,7 +732,7 @@ input {
 .orb-1 {
   width: 500px;
   height: 500px;
-  background: rgba(34, 230, 34, 0.08);
+  background: rgba(0, 209, 255, 0.08);
   top: -10%;
   left: -10%;
   animation: orb-float-1 12s ease-in-out infinite;
@@ -764,7 +750,7 @@ input {
 .orb-3 {
   width: 250px;
   height: 250px;
-  background: rgba(102, 255, 102, 0.04);
+  background: rgba(125, 227, 255, 0.04);
   top: 40%;
   left: 50%;
   animation: orb-float-3 10s ease-in-out infinite;
@@ -786,20 +772,12 @@ input {
   max-width: 600px;
 }
 
-.hero-logo {
-  height: clamp(50px, 10vw, 90px);
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 24px rgba(34, 230, 34, 0.5));
-  display: inline-block;
-}
-
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(34, 230, 34, 0.06);
-  border: 1px solid rgba(34, 230, 34, 0.15);
+  background: rgba(0, 209, 255, 0.06);
+  border: 1px solid rgba(0, 209, 255, 0.15);
   border-radius: 50px;
   padding: 10px 24px;
   font-size: 0.9rem;
@@ -845,7 +823,7 @@ input {
 
 .typewriter-text {
   color: var(--neon);
-  text-shadow: 0 0 20px rgba(34, 230, 34, 0.5);
+  text-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
 }
 
 .cursor-blink {
@@ -888,7 +866,7 @@ input {
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--neon);
-  text-shadow: 0 0 15px rgba(34, 230, 34, 0.3);
+  text-shadow: 0 0 15px rgba(0, 209, 255, 0.3);
 }
 
 .hero-stat-label {
@@ -905,8 +883,8 @@ input {
 
 .trading-terminal {
   padding: 0;
-  border: 1px solid rgba(34, 230, 34, 0.12);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(34, 230, 34, 0.08);
+  border: 1px solid rgba(0, 209, 255, 0.12);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 209, 255, 0.08);
 }
 
 .terminal-header {
@@ -914,7 +892,7 @@ input {
   align-items: center;
   gap: 12px;
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(34, 230, 34, 0.08);
+  border-bottom: 1px solid rgba(0, 209, 255, 0.08);
   background: rgba(15, 15, 15, 0.8);
   border-radius: var(--radius) var(--radius) 0 0;
 }
@@ -974,7 +952,7 @@ input {
   gap: 12px;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(34, 230, 34, 0.06);
+  border-bottom: 1px solid rgba(0, 209, 255, 0.06);
 }
 
 .terminal-pair {
@@ -988,7 +966,7 @@ input {
   font-weight: 700;
   font-size: 1.3rem;
   color: var(--neon);
-  text-shadow: 0 0 12px rgba(34, 230, 34, 0.4);
+  text-shadow: 0 0 12px rgba(0, 209, 255, 0.4);
 }
 
 .terminal-change {
@@ -1000,8 +978,8 @@ input {
 }
 
 .terminal-change.positive {
-  color: #22e622;
-  background: rgba(34, 230, 34, 0.12);
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.12);
 }
 
 .terminal-change.negative {
@@ -1037,8 +1015,8 @@ input {
 }
 
 .of-type.buy {
-  color: #22e622;
-  background: rgba(34, 230, 34, 0.12);
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.12);
 }
 
 .of-type.sell {
@@ -1067,7 +1045,7 @@ input {
   align-items: center;
   gap: 8px;
   background: rgba(10, 10, 10, 0.8);
-  border: 1px solid rgba(34, 230, 34, 0.12);
+  border: 1px solid rgba(0, 209, 255, 0.12);
   border-radius: 50px;
   padding: 8px 16px;
   backdrop-filter: blur(12px);
@@ -1097,7 +1075,7 @@ input {
 
 .fb-icon {
   font-size: 1.1rem;
-  filter: drop-shadow(0 0 6px rgba(34, 230, 34, 0.4));
+  filter: drop-shadow(0 0 6px rgba(0, 209, 255, 0.4));
 }
 
 .fb-price {
@@ -1114,7 +1092,7 @@ input {
 }
 
 .fb-change.positive {
-  color: #22e622;
+  color: #00d1ff;
 }
 
 .fb-change.negative {
@@ -1138,7 +1116,7 @@ input {
 .scroll-mouse {
   width: 24px;
   height: 40px;
-  border: 2px solid rgba(34, 230, 34, 0.3);
+  border: 2px solid rgba(0, 209, 255, 0.3);
   border-radius: 12px;
   position: relative;
   display: flex;
@@ -1166,8 +1144,8 @@ input {
    ============================================================ */
 .ticker-section {
   overflow: hidden;
-  border-top: 1px solid rgba(34, 230, 34, 0.06);
-  border-bottom: 1px solid rgba(34, 230, 34, 0.06);
+  border-top: 1px solid rgba(0, 209, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 209, 255, 0.06);
   background: rgba(5, 5, 5, 0.8);
   padding: 16px 0;
   position: relative;
@@ -1210,8 +1188,8 @@ input {
 }
 
 .ticker-change.positive {
-  color: #22e622;
-  background: rgba(34, 230, 34, 0.1);
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.1);
 }
 
 .ticker-change.negative {
@@ -1220,7 +1198,7 @@ input {
 }
 
 .positive {
-  color: #22e622;
+  color: #00d1ff;
 }
 
 .negative {
@@ -1254,8 +1232,8 @@ input {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22e622;
-  box-shadow: 0 0 12px #22e622;
+  background: #00d1ff;
+  box-shadow: 0 0 12px #00d1ff;
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
@@ -1279,10 +1257,10 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(34, 230, 34, 0.08);
+  background: rgba(0, 209, 255, 0.08);
   border-radius: 12px;
-  border: 1px solid rgba(34, 230, 34, 0.12);
-  filter: drop-shadow(0 0 8px rgba(34, 230, 34, 0.3));
+  border: 1px solid rgba(0, 209, 255, 0.12);
+  filter: drop-shadow(0 0 8px rgba(0, 209, 255, 0.3));
 }
 
 .mc-name {
@@ -1325,8 +1303,8 @@ input {
 }
 
 .mc-change.positive {
-  color: #22e622;
-  background: rgba(34, 230, 34, 0.12);
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.12);
 }
 
 .mc-change.negative {
@@ -1346,7 +1324,7 @@ input {
   display: flex;
   justify-content: space-between;
   padding-top: 12px;
-  border-top: 1px solid rgba(34, 230, 34, 0.06);
+  border-top: 1px solid rgba(0, 209, 255, 0.06);
 }
 
 .mc-footer span {
@@ -1417,7 +1395,7 @@ input {
 
 .cp-bg {
   fill: none;
-  stroke: rgba(34, 230, 34, 0.08);
+  stroke: rgba(0, 209, 255, 0.08);
   stroke-width: 8;
 }
 
@@ -1429,7 +1407,7 @@ input {
   stroke-dasharray: 326.73;
   stroke-dashoffset: 326.73;
   transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 0 6px rgba(34, 230, 34, 0.4));
+  filter: drop-shadow(0 0 6px rgba(0, 209, 255, 0.4));
 }
 
 .cp-value {
@@ -1442,7 +1420,7 @@ input {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--neon);
-  text-shadow: 0 0 12px rgba(34, 230, 34, 0.4);
+  text-shadow: 0 0 12px rgba(0, 209, 255, 0.4);
 }
 
 /* Bar Chart */
@@ -1474,7 +1452,7 @@ input {
   align-items: flex-end;
   justify-content: center;
   position: relative;
-  box-shadow: 0 0 15px rgba(34, 230, 34, 0.2);
+  box-shadow: 0 0 15px rgba(0, 209, 255, 0.2);
 }
 
 .bar span {
@@ -1510,7 +1488,7 @@ input {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--neon);
-  text-shadow: 0 0 10px rgba(34, 230, 34, 0.3);
+  text-shadow: 0 0 10px rgba(0, 209, 255, 0.3);
 }
 
 .counter-label {
@@ -1566,7 +1544,7 @@ input {
   color: var(--neon);
   margin-left: 12px;
   font-family: var(--font-mono);
-  text-shadow: 0 0 12px rgba(34, 230, 34, 0.3);
+  text-shadow: 0 0 12px rgba(0, 209, 255, 0.3);
 }
 
 .pair-change {
@@ -1579,8 +1557,8 @@ input {
 }
 
 .pair-change.positive {
-  color: #22e622;
-  background: rgba(34, 230, 34, 0.1);
+  color: #00d1ff;
+  background: rgba(0, 209, 255, 0.1);
 }
 
 .pair-change.negative {
@@ -1605,9 +1583,9 @@ input {
 
 .tf-btn.active,
 .tf-btn:hover {
-  background: rgba(34, 230, 34, 0.12);
+  background: rgba(0, 209, 255, 0.12);
   color: var(--neon);
-  box-shadow: 0 0 10px rgba(34, 230, 34, 0.1);
+  box-shadow: 0 0 10px rgba(0, 209, 255, 0.1);
 }
 
 #candlestickChart {
@@ -1633,7 +1611,7 @@ input {
 }
 
 .buy-card h3 {
-  color: #22e622;
+  color: #00d1ff;
 }
 
 .sell-card h3 {
@@ -1667,7 +1645,7 @@ input {
 .trade-input:focus {
   outline: none;
   border-color: var(--neon);
-  box-shadow: 0 0 20px rgba(34, 230, 34, 0.15);
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.15);
 }
 
 /* ============================================================
@@ -1690,13 +1668,13 @@ input {
 }
 
 .wallet-card:hover {
-  box-shadow: 0 0 50px rgba(34, 230, 34, 0.15);
+  box-shadow: 0 0 50px rgba(0, 209, 255, 0.15);
 }
 
 .wallet-icon {
   font-size: 2.5rem;
   margin-bottom: 12px;
-  filter: drop-shadow(0 0 16px rgba(34, 230, 34, 0.5));
+  filter: drop-shadow(0 0 16px rgba(0, 209, 255, 0.5));
 }
 
 .wallet-name {
@@ -1765,7 +1743,7 @@ input {
 
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 40px rgba(34, 230, 34, 0.2);
+  box-shadow: 0 0 40px rgba(0, 209, 255, 0.2);
 }
 
 .feature-icon {
@@ -1776,14 +1754,14 @@ input {
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  background: rgba(34, 230, 34, 0.06);
-  border: 1px solid rgba(34, 230, 34, 0.12);
+  background: rgba(0, 209, 255, 0.06);
+  border: 1px solid rgba(0, 209, 255, 0.12);
   transition: all var(--transition);
 }
 
 .feature-card:hover .feature-icon {
-  background: rgba(34, 230, 34, 0.12);
-  box-shadow: 0 0 40px rgba(34, 230, 34, 0.25);
+  background: rgba(0, 209, 255, 0.12);
+  box-shadow: 0 0 40px rgba(0, 209, 255, 0.25);
   transform: scale(1.1);
 }
 
@@ -1804,7 +1782,7 @@ input {
    FOOTER
    ============================================================ */
 .footer-section {
-  border-top: 1px solid rgba(34, 230, 34, 0.06);
+  border-top: 1px solid rgba(0, 209, 255, 0.06);
   padding: 80px 0 32px;
   background: rgba(5, 5, 5, 0.8);
   position: relative;
@@ -1852,7 +1830,7 @@ input {
   justify-content: space-between;
   align-items: center;
   padding-top: 32px;
-  border-top: 1px solid rgba(34, 230, 34, 0.06);
+  border-top: 1px solid rgba(0, 209, 255, 0.06);
 }
 
 .footer-bottom p {
@@ -1873,7 +1851,7 @@ input {
   align-items: center;
   justify-content: center;
   background: rgba(10, 10, 10, 0.8);
-  border: 1px solid rgba(34, 230, 34, 0.1);
+  border: 1px solid rgba(0, 209, 255, 0.1);
   font-size: 1rem;
   color: var(--text-secondary);
   transition: all var(--transition);
@@ -1882,7 +1860,7 @@ input {
 .footer-socials a:hover {
   color: var(--neon);
   border-color: var(--neon);
-  box-shadow: 0 0 20px rgba(34, 230, 34, 0.3);
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
   transform: translateY(-3px);
 }
 
