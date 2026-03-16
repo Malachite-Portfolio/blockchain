@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malachite — Trade Smarter, Grow Faster</title>
+    <meta name="description"
+        content="Malachite is a premium crypto trading platform. Trade smarter, grow faster with lightning-fast transactions and institutional-grade security." />
+
+    <!-- ==================== SECURITY HEADERS ==================== -->
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+               script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com;
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+               font-src 'self' https://fonts.gstatic.com;
+               img-src 'self' data: blob:;
+               connect-src 'self' https://api.coingecko.com https://www.google.com;
+               frame-src https://www.google.com;
+               object-src 'none';
+               base-uri 'self';
+               form-action 'self';
+               frame-ancestors 'none';" />
+
+    <!-- Prevent MIME-type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Referrer Policy - don't leak full URL to third parties -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Permissions Policy — restrict sensitive browser APIs -->
+    <meta http-equiv="Permissions-Policy"
+        content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=()" />
+    <!-- ==================== END SECURITY ==================== -->
+
+    <link rel="icon" type="image/webp" href="img/fevicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ======================== PAGE LOADER ======================== -->
+    <div id="page-loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <img src="img/logo.webp" alt="Malachite" class="loader-logo" />
+        </div>
+    </div>
+
+    <!-- ======================== CURSOR GLOW ======================== -->
+    <div id="cursor-glow"></div>
+
+    <!-- ======================== ANIMATED GRID BG ======================== -->
+    <div id="grid-bg"></div>
+
+    <!-- ======================== MATRIX RAIN BG ======================== -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="img/logo.webp" alt="Malachite" class="logo-img" />
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#liveMarkets">Markets</a></li>
+                <li><a href="#infographics">Stats</a></li>
+                <li><a href="#dashboard">Trade</a></li>
+                <li><a href="#wallets">Wallets</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-primary btn-sm glow-btn">Get Started</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section id="hero" class="hero-section">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hero-glow-orb orb-1"></div>
+        <div class="hero-glow-orb orb-2"></div>
+        <div class="hero-glow-orb orb-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-badge animate-badge">
+                    <span class="badge-pulse"></span>
+                    ⚡ Next-Gen Crypto Platform
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line"><img src="img/logo.webp" alt="Malachite" class="hero-logo" /></span>
+                    <span class="title-line gradient-text">Trade Smarter,</span>
+                    <span class="title-line">Grow <span class="typewriter-text" id="typewriter"></span><span
+                            class="cursor-blink">|</span></span>
+                </h1>
+                <p class="hero-subtitle">
+                    Experience institutional-grade crypto trading with lightning-fast execution,
+                    military-grade security, and an interface designed for the future.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#dashboard" class="btn btn-primary btn-lg glow-btn">
+                        <span>Trade Now</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="btn btn-outline btn-lg">
+                        <span>Get Started</span>
+                    </a>
+                </div>
+                <div class="hero-stats-row">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value" data-count="1000000" data-suffix="+">0</span>
+                        <span class="hero-stat-label">Active Users</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value" data-prefix="$" data-count="5" data-suffix="B+">0</span>
+                        <span class="hero-stat-label">Trading Volume</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value" data-count="150" data-suffix="+">0</span>
+                        <span class="hero-stat-label">Crypto Assets</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <!-- Live Trading Terminal -->
+                <div class="trading-terminal glass-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <span class="terminal-title">Live Trading</span>
+                        <span class="terminal-live-badge">● LIVE</span>
+                    </div>
+                    <div class="terminal-body">
+                        <canvas id="heroMiniChart" class="terminal-chart" height="140"></canvas>
+                        <div class="terminal-price-row">
+                            <span class="terminal-pair">BTC/USDT</span>
+                            <span class="terminal-price" id="terminalPrice">$48,235.67</span>
+                            <span class="terminal-change positive" id="terminalChange">+2.45%</span>
+                        </div>
+                        <div class="order-flow" id="orderFlow">
+                            <!-- JS populates live trade feed -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Price Badges -->
+                <div class="floating-badge fb-1">
+                    <span class="fb-icon">₿</span>
+                    <span class="fb-price">$48,235</span>
+                    <span class="fb-change positive">+2.45%</span>
+                </div>
+                <div class="floating-badge fb-2">
+                    <span class="fb-icon">Ξ</span>
+                    <span class="fb-price">$3,278</span>
+                    <span class="fb-change positive">+1.82%</span>
+                </div>
+                <div class="floating-badge fb-3">
+                    <span class="fb-icon">◎</span>
+                    <span class="fb-price">$120.15</span>
+                    <span class="fb-change negative">-0.73%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ======================== LIVE CRYPTO TICKER ======================== -->
+    <section id="ticker" class="ticker-section">
+        <div class="ticker-track" id="tickerTrack">
+            <!-- JS will populate ticker items x2 for infinite scroll -->
+        </div>
+    </section>
+
+    <!-- ======================== LIVE MARKETS — DYNAMIC CHARTS ======================== -->
+    <section id="liveMarkets" class="section live-markets-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔥 Live Markets</span>
+                <h2 class="section-title">Real-Time <span class="gradient-text">Trading Charts</span></h2>
+                <p class="section-subtitle">Watch market movements unfold in real time with our dynamic live charts.
+                </p>
+                <div class="section-line"></div>
+            </div>
+            <div class="markets-grid">
+                <div class="market-card glass-card" data-coin="BTC" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">₿</span>
+                            <div><span class="mc-name">Bitcoin</span><span class="mc-symbol">BTC/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$48,235.00</span>
+                            <span class="mc-change positive">+2.45%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $2.1B</span>
+                        <span class="mc-high">H: $49,120</span>
+                        <span class="mc-low">L: $47,340</span>
+                    </div>
+                </div>
+                <div class="market-card glass-card" data-coin="ETH" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">Ξ</span>
+                            <div><span class="mc-name">Ethereum</span><span class="mc-symbol">ETH/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$3,278.00</span>
+                            <span class="mc-change positive">+1.82%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $1.4B</span>
+                        <span class="mc-high">H: $3,350</span>
+                        <span class="mc-low">L: $3,190</span>
+                    </div>
+                </div>
+                <div class="market-card glass-card" data-coin="SOL" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">◎</span>
+                            <div><span class="mc-name">Solana</span><span class="mc-symbol">SOL/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$120.15</span>
+                            <span class="mc-change negative">-0.73%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $890M</span>
+                        <span class="mc-high">H: $124.50</span>
+                        <span class="mc-low">L: $118.20</span>
+                    </div>
+                </div>
+                <div class="market-card glass-card" data-coin="BNB" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">⬡</span>
+                            <div><span class="mc-name">BNB</span><span class="mc-symbol">BNB/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$412.38</span>
+                            <span class="mc-change positive">+3.12%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $620M</span>
+                        <span class="mc-high">H: $418.90</span>
+                        <span class="mc-low">L: $400.10</span>
+                    </div>
+                </div>
+                <div class="market-card glass-card" data-coin="XRP" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">✕</span>
+                            <div><span class="mc-name">XRP</span><span class="mc-symbol">XRP/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$0.8234</span>
+                            <span class="mc-change positive">+0.94%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $340M</span>
+                        <span class="mc-high">H: $0.841</span>
+                        <span class="mc-low">L: $0.812</span>
+                    </div>
+                </div>
+                <div class="market-card glass-card" data-coin="AVAX" data-animate>
+                    <div class="mc-header">
+                        <div class="mc-info">
+                            <span class="mc-icon">▲</span>
+                            <div><span class="mc-name">Avalanche</span><span class="mc-symbol">AVAX/USDT</span></div>
+                        </div>
+                        <div class="mc-price-wrap">
+                            <span class="mc-price">$42.87</span>
+                            <span class="mc-change negative">-1.28%</span>
+                        </div>
+                    </div>
+                    <canvas class="mc-chart" height="120"></canvas>
+                    <div class="mc-footer">
+                        <span class="mc-vol">Vol: $210M</span>
+                        <span class="mc-high">H: $44.10</span>
+                        <span class="mc-low">L: $41.90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== ANIMATED INFOGRAPHICS ======================== -->
+    <section id="infographics" class="section infographics-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📊 Platform Statistics</span>
+                <h2 class="section-title">Powered by <span class="gradient-text">Performance</span></h2>
+                <p class="section-subtitle">Real-time metrics that showcase the scale and speed of the Malachite
+                    ecosystem.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="infographics-grid">
+                <!-- Card 1: Circular Progress -->
+                <div class="info-card glass-card" data-animate>
+                    <div class="circular-progress-wrap">
+                        <svg class="circular-progress" viewBox="0 0 120 120">
+                            <circle class="cp-bg" cx="60" cy="60" r="52" />
+                            <circle class="cp-fill" cx="60" cy="60" r="52" data-percent="85" />
+                        </svg>
+                        <span class="cp-value">0%</span>
+                    </div>
+                    <h3>85% Faster Transactions</h3>
+                    <p>Compared to industry average settlement times.</p>
+                </div>
+                <!-- Card 2: Line Growth Chart -->
+                <div class="info-card glass-card" data-animate>
+                    <canvas id="lineChart" width="280" height="160"></canvas>
+                    <h3>User Growth</h3>
+                    <p>Exponential user adoption across 120+ countries.</p>
+                </div>
+                <!-- Card 3: Bar Chart -->
+                <div class="info-card glass-card" data-animate>
+                    <div class="bar-chart" id="barChart">
+                        <div class="bar-col">
+                            <div class="bar" data-height="40"><span>Q1</span></div>
+                            <span class="bar-label">$1.2B</span>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar" data-height="60"><span>Q2</span></div>
+                            <span class="bar-label">$2.1B</span>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar" data-height="75"><span>Q3</span></div>
+                            <span class="bar-label">$3.4B</span>
+                        </div>
+                        <div class="bar-col">
+                            <div class="bar" data-height="95"><span>Q4</span></div>
+                            <span class="bar-label">$5.1B</span>
+                        </div>
+                    </div>
+                    <h3>Trading Volume</h3>
+                    <p>Quarterly volume growth across all markets.</p>
+                </div>
+                <!-- Card 4: Counter Stats -->
+                <div class="info-card glass-card" data-animate>
+                    <div class="counter-grid">
+                        <div class="counter-item">
+                            <span class="counter-value" data-count="1000000" data-suffix="+">0</span>
+                            <span class="counter-label">Users</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" data-prefix="$" data-count="5" data-suffix="B+">0</span>
+                            <span class="counter-label">Volume</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" data-count="99.9" data-suffix="%">0</span>
+                            <span class="counter-label">Uptime</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-value" data-count="50" data-suffix="ms">0</span>
+                            <span class="counter-label">Latency</span>
+                        </div>
+                    </div>
+                    <h3>Platform Metrics</h3>
+                    <p>Enterprise-grade reliability and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== TRADING DASHBOARD ======================== -->
+    <section id="dashboard" class="section dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📈 Live Dashboard</span>
+                <h2 class="section-title">Trading <span class="gradient-text">Dashboard</span></h2>
+                <p class="section-subtitle">Professional-grade charting with real-time data feeds and instant execution.
+                </p>
+                <div class="section-line"></div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-panel glass-card">
+                    <div class="chart-header">
+                        <div class="chart-pair">
+                            <span class="pair-name">BTC / USDT</span>
+                            <span class="pair-price" id="chartPrice">$48,235.67</span>
+                            <span class="pair-change positive">+2.34%</span>
+                        </div>
+                        <div class="chart-timeframes">
+                            <button class="tf-btn active">1H</button>
+                            <button class="tf-btn">4H</button>
+                            <button class="tf-btn">1D</button>
+                            <button class="tf-btn">1W</button>
+                        </div>
+                    </div>
+                    <div id="candlestickChart"></div>
+                </div>
+                <div class="trade-panels">
+                    <div class="trade-card glass-card buy-card">
+                        <h3>Buy BTC</h3>
+                        <div class="trade-input-group">
+                            <label>Amount (USDT)</label>
+                            <input type="text" placeholder="0.00" class="trade-input" />
+                        </div>
+                        <div class="trade-input-group">
+                            <label>You receive (BTC)</label>
+                            <input type="text" placeholder="0.00000" class="trade-input" readonly />
+                        </div>
+                        <button class="btn btn-buy">Buy BTC</button>
+                    </div>
+                    <div class="trade-card glass-card sell-card">
+                        <h3>Sell BTC</h3>
+                        <div class="trade-input-group">
+                            <label>Amount (BTC)</label>
+                            <input type="text" placeholder="0.00000" class="trade-input" />
+                        </div>
+                        <div class="trade-input-group">
+                            <label>You receive (USDT)</label>
+                            <input type="text" placeholder="0.00" class="trade-input" readonly />
+                        </div>
+                        <button class="btn btn-sell">Sell BTC</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== WALLET CARDS ======================== -->
+    <section id="wallets" class="section wallets-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💎 Multi-Chain Wallets</span>
+                <h2 class="section-title">Your <span class="gradient-text">Wallets</span></h2>
+                <p class="section-subtitle">Manage all your crypto assets in one secure, beautifully designed interface.
+                </p>
+                <div class="section-line"></div>
+            </div>
+            <div class="wallets-grid">
+                <div class="wallet-card glass-card" data-animate>
+                    <div class="wallet-icon">₿</div>
+                    <div class="wallet-name">Bitcoin</div>
+                    <div class="wallet-balance">
+                        <span class="wallet-amount" data-count="2.4587" data-decimals="4">0</span>
+                        <span class="wallet-currency">BTC</span>
+                    </div>
+                    <div class="wallet-usd">≈ $118,642.30</div>
+                    <div class="wallet-actions">
+                        <button class="btn btn-sm btn-primary glow-btn">Deposit</button>
+                        <button class="btn btn-sm btn-outline">Withdraw</button>
+                    </div>
+                </div>
+                <div class="wallet-card glass-card" data-animate>
+                    <div class="wallet-icon">Ξ</div>
+                    <div class="wallet-name">Ethereum</div>
+                    <div class="wallet-balance">
+                        <span class="wallet-amount" data-count="18.9421" data-decimals="4">0</span>
+                        <span class="wallet-currency">ETH</span>
+                    </div>
+                    <div class="wallet-usd">≈ $62,108.89</div>
+                    <div class="wallet-actions">
+                        <button class="btn btn-sm btn-primary glow-btn">Deposit</button>
+                        <button class="btn btn-sm btn-outline">Withdraw</button>
+                    </div>
+                </div>
+                <div class="wallet-card glass-card" data-animate>
+                    <div class="wallet-icon">◎</div>
+                    <div class="wallet-name">Solana</div>
+                    <div class="wallet-balance">
+                        <span class="wallet-amount" data-count="342.18" data-decimals="2">0</span>
+                        <span class="wallet-currency">SOL</span>
+                    </div>
+                    <div class="wallet-usd">≈ $41,061.60</div>
+                    <div class="wallet-actions">
+                        <button class="btn btn-sm btn-primary glow-btn">Deposit</button>
+                        <button class="btn btn-sm btn-outline">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FEATURES GRID ======================== -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🚀 Why Malachite</span>
+                <h2 class="section-title">Built for <span class="gradient-text">the Future</span></h2>
+                <p class="section-subtitle">Every feature is designed with security, speed, and user experience in mind.
+                </p>
+                <div class="section-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22e622" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Secure</h3>
+                    <p>Military-grade encryption with multi-sig cold storage and real-time threat monitoring.</p>
+                </div>
+                <div class="feature-card glass-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22e622" stroke-width="1.5">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                    </div>
+                    <h3>Fast</h3>
+                    <p>Sub-50ms order execution with our proprietary matching engine and global infrastructure.</p>
+                </div>
+                <div class="feature-card glass-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22e622" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3" />
+                            <circle cx="4" cy="6" r="2" />
+                            <circle cx="20" cy="6" r="2" />
+                            <circle cx="4" cy="18" r="2" />
+                            <circle cx="20" cy="18" r="2" />
+                            <path d="M6 7.5L9.5 10.5M14.5 10.5L18 7.5M6 16.5L9.5 13.5M14.5 13.5L18 16.5" />
+                        </svg>
+                    </div>
+                    <h3>Decentralized</h3>
+                    <p>True ownership of your assets with non-custodial wallet integration and DeFi access.</p>
+                </div>
+                <div class="feature-card glass-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22e622" stroke-width="1.5">
+                            <rect x="2" y="7" width="20" height="14" rx="2" />
+                            <path d="M16 7V5a4 4 0 00-8 0v2" />
+                            <circle cx="12" cy="14" r="2" />
+                        </svg>
+                    </div>
+                    <h3>Multi-Asset</h3>
+                    <p>Trade 150+ cryptocurrencies, NFTs, and tokenized stocks from a single unified platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo"><img src="img/logo.webp" alt="Malachite" class="logo-img" /></a>
+                    <p>The next generation crypto trading platform built for speed, security, and scale.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <a href="#">Trade</a>
+                    <a href="#">Wallets</a>
+                    <a href="#">Staking</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Status</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Malachite. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="Discord">⌘</a>
+                    <a href="#" aria-label="Telegram">✈</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Security Module (load before main) -->
+    <script src="js/security.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
